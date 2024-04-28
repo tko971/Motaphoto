@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "Space Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/Space_Mono/SpaceMono-Regular.woff"),
+    url("./assets/fonts/Space_Mono/SpaceMono-Regular.woff2");
+
+}
+
+@font-face {
+    font-family:'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/Poppins/Poppins-Regular.woff"),
+    url("./assets/fonts/Poppins/Poppins-Regular.woff2");
+
+}
+
+body{
+margin:0;
+padding: 0;
+    
+}
+
+
+
+li{
+
+     
+     list-style-type: none;
+
+}
+
+
+
+a{
+
+    text-decoration: none;
+    color: black;
+    font-family: "Space Mono";
+
+}
+
+#menu-main-menu{
+
+      display: flex;
+      gap: 50px;
+      margin-right: 100px;
+      float: right;
+      
+
+}
+
+.modale{
+
+    display: none;
+}
+
+.my-footer-menu{
+
+     display: flex;
+     column-gap: 70px;
+
+}
+
+#footer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-top: solid;
+    
+    
+}
+
+#header{
+
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+#site-title{
+    
+    position: relative;
+    left: 146px;
+}
+
+#branding{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#menu{
+
+    width: 100%;
+}
+
+label{
+
+    font-family:'Poppins';
+}
+
+label input{
+
+    height: 40px;
+    width: 263px;
+    border-width: 1px;
+    border-color:#B8BBC2;
+    border-radius: 8px;
+    border-style: solid;
+
+}
+
+label textarea{
+
+    height: 210px;
+    width: 263px;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color:#B8BBC2;
+    
+    
+}
+
+input[type="submit" i]{
+
+    width:263px;
+    height:50px;
+    border-color:#D8D8D8;
+    background-color:#D8D8D8;
+    border-radius: 2px;
+    border-style: solid;
+    font-family: "Space Mono";
+}
+    
+
+
+
+
