@@ -20,6 +20,11 @@
   </div>
 
   <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+   <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="line l1"></span>
+                <span class="line l2"></span>
+                <span class="line l3"></span>
+   </button>
   <?php 
   wp_nav_menu(
     [
@@ -31,7 +36,9 @@
   ); 
   ?>
   </nav>
+  
 </div>
 </header>
 <div id="container">
 <main id="content" role="main">
+  
