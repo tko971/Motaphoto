@@ -1,0 +1,14 @@
+<div class="lightbox">
+  <img class="lightbox__close" src="<?php echo get_stylesheet_directory_uri(); ?>/images/croix.png"></img>
+  <img class="lightbox__next" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Navd_arrows.png"></img>
+  <img class="lightbox__prev" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Navg_arrows.png"></img>
+  <div class="lightbox__container">
+    <div class="lightbox__container__photo">
+      <img src="" id="lightbox-img" >
+      <div class="lightbox__container_photo_meta">
+        <h4>Rèf</h4>
+        <h4>Catégorie</h4>
+      </div> 
+    </div> 
+  </div>
+</div>

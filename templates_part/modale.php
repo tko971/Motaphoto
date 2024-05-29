@@ -1,4 +1,25 @@
-<div class='modale'>
+<div class='modale'>    
 <?php echo wp_get_attachment_image( 159, "", array( "class" => "img-responsive" ) );  ?>    
-<?php echo do_shortcode( '[contact-form-7 id="da3a3ad" title="Formulaire de contact 1"]' ); ?>
+<form action="" method="post">
+  <ul>
+    <li>
+      <label for="name">NOM</label>
+      <input type="text" id="name" name="user_name" />
+    </li>
+    <li>
+      <label for="mail">E-MAIL</label>
+      <input type="email" id="mail" name="user_mail" />
+    </li>
+    <li>
+      <label for="mail">REF.PHOTO</label>
+      <input type="email" id="" name="ref" value="<?php echo get_field("reference");?>" />
+    </li>
+    <li>
+      <label for="msg">MESSAGE</label>
+      <textarea id="msg" name="user_message"></textarea>
+    </li>
+  </ul>
+  <input type="submit" value="Envoyer" />
+</form>
+
 </div> 

@@ -19,7 +19,7 @@
     <?php endif; ?>
   </div>
 
-  <nav id="menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+  <nav id="menu" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                 <span class="line l1"></span>
                 <span class="line l2"></span>
