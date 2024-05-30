@@ -6,8 +6,8 @@
     <div class="lightbox__container__photo">
       <img src="" id="lightbox-img" >
       <div class="lightbox__container_photo_meta">
-        <h4>Rèf</h4>
-        <h4>Catégorie</h4>
+        <h4 id="lightbox-ref"></h4>
+        <h4 id="lightbox-cat"></h4>
       </div> 
     </div> 
   </div>

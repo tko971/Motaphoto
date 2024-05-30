@@ -51,6 +51,23 @@ jQuery(function($) {
                 console.log(response)
                 $('.galerie').append(response);//append ajoute les elements en plus des autres
                 $('.loadmore').hide()
+                // ajouter les événements sur le "carré"
+                const ouvertureLightbox = document.querySelectorAll('.fullscreen.more');
+                // const lightbox=document.querySelector('.lightbox');
+                const lb_img = document.querySelector('#lightbox-img');
+                const lb_cat = document.querySelector('#lightbox-cat');
+                const lb_ref = document.querySelector('#lightbox-ref');
+
+                ouvertureLightbox.forEach(function(carre) {
+                carre.addEventListener('click', function() {
+                    lightbox.classList.toggle('show');
+                    lb_img.setAttribute('src', carre.dataset.src);
+                    lb_cat.innerHTML =  carre.dataset.cat;
+                    lb_ref.innerHTML =  carre.dataset.ref;
+                })
+                })
+                // recalculer le tableau 
+                chargeListe();
 
             },
             error:function(response){

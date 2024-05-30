@@ -22,19 +22,22 @@
     <div class="contactsingle">
      <p>Cette photo vous interesse?</p>
      <li class="menu-item-76">
-      <a href="<?php echo get_field("reference");?>">Contact</a>
+      <a href="#">Contact</a>
      </li>
+     <ul class="pagination justify-content-center mb-4">
+	    <ul class="pagination justify-content-center mb-4">
+		   <li class="page-item">
+       <div class="imgnext">
+       <?php $nextPost = get_next_post(); $nextThumbnail = get_the_post_thumbnail( $nextPost->ID ); next_post_link($nextThumbnail);?> 
+       </div>  
+			 <?php next_post_link(); ?><img class="slidernext" a href= "" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lined.png">
+	     </li>
+	     <li class="page-item">
+		   <?php previous_post_link(); ?><img class="sliderprev" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lineg.png"> 
+	     </li>
+	     </ul>
+     </ul>
     </div>
-    <div class="slidersingle"> 
-    <?php $loop = new WP_Query( array('post_type' => 'photo', 'posts_per_page' => 15,"orderby"=>"desc"));?>
-    <?php while ( $loop->have_posts()) : $loop->the_post(); ?>
-    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
-    <?php the_terms( $post->ID, 'photos','Photo'); ?>
-    <?php the_content(); ?>
-    <?php endwhile; ?>
-    <?php wp_reset_postdata(); ?>
-    <img class="slidernext" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lined.png">
-    <img class="sliderprev" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lineg.png"> 
     </div>
   </div>
     <hr>

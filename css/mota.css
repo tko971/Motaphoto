@@ -464,14 +464,18 @@ left: 162px;
 
 .slidernext{
     position: relative;
-    top: 120px;
-    left: 250px;
+    
 }
 
 .sliderprev{
     position: relative;
-    top: 120px;
-    left: 100px;
+    
+}
+
+.imgnext img{
+
+    width: 100px;
+    height: 100px;
 }
 
 /* LIGHTBOX */
@@ -500,7 +504,7 @@ left: 162px;
 
 }
 
-.lightbox.show{
+.show{
 
     display: block;
     
@@ -537,7 +541,7 @@ left: 162px;
     height: 495px;
     background: #000000bf;
     opacity: 0;
-    display: none;
+    /* display: none; */
     flex-direction: row;
     transition-duration: 1s;
 }
