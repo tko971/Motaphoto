@@ -5,6 +5,7 @@ let fullscreen = document.querySelectorAll('.fullscreen');
 const closelightbox = document.querySelector(".lightbox__close");
 const lightbox = document.querySelector(".lightbox");
 const lightboxnext = document.querySelector(".lightbox__next");
+const lightboxprev = document.querySelector(".lightbox__prev");
 
 
 
@@ -82,6 +83,16 @@ function chargeListe() {
     currentImage++;
     if(currentImage > lightboxlist.length) {
       currentImage = 0;
+    }
+    lb_img.setAttribute('src', lightboxlist[currentImage].src);
+    lb_cat.innerHTML =  lightboxlist[currentImage].cat;
+    lb_ref.innerHTML =  lightboxlist[currentImage].ref;
+  })
+
+  lightboxprev.addEventListener('click', function() {
+    currentImage--;
+    if(currentImage < 0) {
+      currentImage = lightboxlist.length;
     }
     lb_img.setAttribute('src', lightboxlist[currentImage].src);
     lb_cat.innerHTML =  lightboxlist[currentImage].cat;

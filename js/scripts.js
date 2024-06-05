@@ -1,26 +1,16 @@
-/*let liencontact = document.querySelector(".menu-item-75");
+
+let liencontact = document.querySelectorAll(".menu-item-75");
 let modale = document.querySelector(".modale");
 
 
-liencontact.addEventListener("click", toggleNav)
+liencontact.forEach(function(e){
+    e.addEventListener("click", toggleNav)
 
 function toggleNav(e){
     e.preventDefault()
 	modale.classList.toggle("active") 
-}
+}})
 
-//MODALE2
-let liencontacte = document.querySelector(".menu-item-76");
-let modalee = document.querySelector(".modale");
-
-
-liencontacte.addEventListener("click", toggleNave)
-
-function toggleNave(e){
-    e.preventDefault()
-	modalee.classList.toggle("active") 
-}
-*/
 //MENU TOGGLE
 let menuburger = document.querySelector(".menu-toggle");
 let navhover = document.querySelector("#menu-main-menu");
@@ -30,7 +20,8 @@ menuburger.addEventListener("click", togglemenu)
 
 function togglemenu(e){
     e.preventDefault()
-	navhover.classList.toggle("active") 
+	navhover.classList.toggle("active");
+    menuburger.classList.toggle("active"); 
 }
 
 //charger plus
@@ -150,5 +141,21 @@ $('#ordre').on('change',function(event){
 })
 
 });
+
+//NAVIGATION SINGLE POST
+
+let flecheGauche = document.querySelector(".sliderprev");
+let flecheDroite = document.querySelector(".slidernext");
+let imagenext = document.querySelector(".page a")
+
+imagenext.addEventListener("click", () => {
+    
+    
+    if(imagenext.dataset = "bf2399") {
+        flecheDroite.style.display = "none";
+      }
+    
+  });
+
 
 

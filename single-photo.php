@@ -5,7 +5,7 @@
   <div class="post">
     <div class="postinfo">    
       <h1 class="post-title"><?php the_title(); ?></h1>
-      <div class="post-info">
+      <div class="post-info" >
        <p>RÉFÉRENCE : <?php echo get_field("reference");?></p>
        <p>CATÉGORIE : <?php echo get_the_terms($post,"photo-categorie")[0]->name;?></p>
        <p>FORMAT : <?php echo get_the_terms($post,"format")[0]->name;?></p>
@@ -21,21 +21,20 @@
   <div class="photosingle">
     <div class="contactsingle">
      <p>Cette photo vous interesse?</p>
-     <li class="menu-item-76">
-      <a href="#">Contact</a>
-     </li>
-     <ul class="pagination justify-content-center mb-4">
-	    <ul class="pagination justify-content-center mb-4">
-		   <li class="page-item">
-       <div class="imgnext">
+     <button class="menu-item-75">Contact</button>
+     <ul class="pagination">
+		   <li class="page">
+       <div class="imgnext" data-ref="<?php echo get_field("reference");?>">
        <?php $nextPost = get_next_post(); $nextThumbnail = get_the_post_thumbnail( $nextPost->ID ); next_post_link($nextThumbnail);?> 
        </div>  
-			 <?php next_post_link(); ?><img class="slidernext" a href= "" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lined.png">
+			 <?php next_post_link('%link'); ?><img class="slidernext" a href= "" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lined.png">
 	     </li>
-	     <li class="page-item">
-		   <?php previous_post_link(); ?><img class="sliderprev" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lineg.png"> 
+	     <li class="page">
+       <div class="imgprev">
+       <?php $prevPost = get_previous_post(); $prevThumbnail = get_the_post_thumbnail( $prevPost->ID ); next_post_link($prevThumbnail);?> 
+       </div>   
+		   <?php previous_post_link('%link'); ?><img class="sliderprev" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lineg.png"> 
 	     </li>
-	     </ul>
      </ul>
     </div>
     </div>
@@ -46,14 +45,20 @@
   <div class="vousaimerezimg">
     <?php $loop = new WP_Query( array('post_type' => 'photo', 'posts_per_page' => 2,"orderby"=>"rand"));?>
     <?php while ( $loop->have_posts()) : $loop->the_post(); ?>
-    
+    <?php
+      $thumbnail_id= get_post_thumbnail_id();
+      $image = wp_get_attachment_image_src($thumbnail_id, 'full');
+    ?>
     <ul>
       <li class="">
         <div class="hover_lightbox">
-            <img class="fullscreen" src="<?php echo get_stylesheet_directory_uri(); ?>/images/fullscreen.png">
+            <img class="fullscreen" src="<?php echo get_stylesheet_directory_uri(); ?>/images/fullscreen.png"
+            data-src="<?php echo esc_url($image[0]); ?>"
+            data-ref="<?php echo get_field("reference");?>" 
+            data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>"
+            >
             <a href="<?php the_permalink() ?>"><img class="oeil" src="<?php echo get_stylesheet_directory_uri(); ?>/images/oeil.png"></a>  
-            <div class="ref"><p><?php echo get_field("reference");?></p></div>
-            <div class="cat"><p><?php echo get_the_terms($post,"photo-categorie")[0]->name;?></p></div> 
+            
         </div>
         <div class=""> 
           <a href="#" data-ref="<?php echo get_field("reference");?>" data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>" ><?php the_post_thumbnail('large'); ?></a>

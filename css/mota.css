@@ -227,7 +227,6 @@ input[type="submit" i]{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 7px;
     background-color: white;
     border: white;
     float: right;
@@ -359,6 +358,14 @@ left: 162px;
     padding: 0;
     margin: 0;
 }
+.vousaimerez{
+
+    margin-left: 144px;
+    margin-right: 144px;
+    display: flex;
+    flex-direction: column;
+
+}
 
 
 /* GALERIE */
@@ -415,7 +422,7 @@ left: 162px;
 
 
 
-.menu-item-76{
+.contactsingle button{
 
     width: 272px;
     height: 50px;
@@ -423,6 +430,9 @@ left: 162px;
     justify-content: center;
     align-items: center;
     display: flex;
+    font-family: 'Space Mono';
+    border: none;
+    border-radius: 2px;
 }
 
 .taxonomy select{
@@ -443,6 +453,32 @@ left: 162px;
     justify-content: center;
     position: relative;
     top: 160px;
+}
+
+.taxonomy select{
+
+    width: 242px;
+    height: 43px;
+}
+
+.categorie{
+
+    position: relative;
+    right: 212px;
+
+}
+
+.format{
+
+    position: relative;
+    right: 134px;
+
+}
+
+.trier{
+
+    position: relative;
+    left: 212px;
 }
 
 
@@ -472,10 +508,50 @@ left: 162px;
     
 }
 
-.imgnext img{
+.page:hover>.imgprev img {
+    
+    visibility: visible;
+    
+}
+
+.page:hover>.imgnext img {
+    
+    visibility: visible;
+    
+}
+
+.pagination a{
+
+    color: white;
+}
+
+.imgnext  img{
 
     width: 100px;
     height: 100px;
+    visibility: hidden;
+    
+}
+
+.imgprev  img{
+
+    width: 100px;
+    height: 100px;
+    visibility: hidden;
+    
+}
+
+.pagination{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+    left: 322px;
+    padding: 0px;
+    width: 300px;
+
 }
 
 /* LIGHTBOX */
@@ -521,15 +597,15 @@ left: 162px;
 .lightbox__prev{
    
     position: relative;
-    left: -100px;
+    left: 42px;
     top: 500px;
 }
 
 .lightbox__close{
     
     position: relative;
-    top: 200px;
-    left: 1500px;
+    top: 54px;
+    left: 1700px;
 }
 
 /* HOVER LIGHTBOX */
@@ -537,7 +613,8 @@ left: 162px;
 .hover_lightbox{
 
     position: absolute;
-    width: 565px;
+    max-width: 565px;
+    width: 100%;
     height: 495px;
     background: #000000bf;
     opacity: 0;
@@ -546,6 +623,24 @@ left: 162px;
     transition-duration: 1s;
 }
 
+.hover_lightbox_vousAimerez{
+
+    position: absolute;
+    width: 793px;
+    height: 495px;
+    background: #000000bf;
+    opacity: 0;
+    /* display: none; */
+    flex-direction: row;
+    transition-duration: 1s;
+
+}
+
+.hover_lightbox_vousAimerez:hover{
+
+    opacity: 1;
+
+}
 
 .hover_lightbox:hover{
 
@@ -579,18 +674,79 @@ left: 162px;
 .ref{
 
     position: relative;
-    top: 450px;
-    left: -50px;
+    top: 405px;
+    left: 25px;
+    font-family: 'Space Mono';
     
 
 }
 
 .cat{
 
-    
     position: relative;
-    top: 450px;
-    left: 352px;
+    top: 365px;
+    left: 442px;
+    font-family: 'Space Mono';
+}
+
+.oeilV{
+
+    width:46px !important;
+    height:31px !important;
+    position: relative;
+    top: 231px;
+    left: 320px;
+    
+}
+
+.fullscreenV{
+
+    width: 34px !important;
+    height: 34px !important;
+    position: relative;
+    top: 11px;
+    left: 737px;
+}
+
+.refV{
+
+    position: relative;
+    top: 405px;
+    left: 25px;
+    font-family: 'Space Mono';
+    color: white;
+    
+
+}
+
+.catV{
+
+    position: relative;
+    top: 365px;
+    left: 700px;
+    font-family: 'Space Mono';
+    color: white;
+}
+
+.lightbox__container_photo_meta {
+    position: absolute;
+    display: flex;
+    top: 742px;
+    color: white;
+    width: 50%;
+    gap: 435px;
+}
+
+.lightbox__container_photo_meta h4{
+
+    font-family: "Space Mono";  
+}
+
+.lightbox__container__photo img{
+
+    width: 564px;
+    height: 495px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 850px){
@@ -611,7 +767,7 @@ left: 162px;
 
         display: flex;
         visibility: hidden;
-        position: absolute;
+        position: fixed;
         width: 100%;
         justify-content: center;
         align-items: center;
@@ -619,9 +775,10 @@ left: 162px;
         flex-direction: column;
         gap: 60px;
         left: 0px;
-        top: 72px;
+        top: 56px;
         background-color: #E00000;
         z-index: 2;
+        
         
     }
 

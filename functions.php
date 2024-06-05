@@ -43,8 +43,13 @@ function register_my_menu() {
 
     $loop=new WP_Query($args);
   
-    while ( $loop->have_posts()) : $loop->the_post(); 
-?>
+    while ( $loop->have_posts()) : $loop->the_post();
+     
+    ?>
+    <?php
+      $thumbnail_id= get_post_thumbnail_id();
+      $image = wp_get_attachment_image_src($thumbnail_id, 'full');
+      ?>
     <div class="galerie_photo">
         <div class="hover_lightbox">
             <img 
@@ -114,19 +119,30 @@ function register_my_menu() {
   $loop=new WP_Query($args);
   if($loop->have_posts()){
   while ( $loop->have_posts()) : $loop->the_post(); 
-   the_post_thumbnail();
-   endwhile;
+  ?>
+  <div class="galerie_photo">
+      <div class="hover_lightbox">
+          <img 
+            class="fullscreen more" src="<?php echo get_stylesheet_directory_uri(); ?>/images/fullscreen.png" 
+            data-src="<?php echo esc_url($image[0]); ?>"
+            data-ref="<?php echo get_field("reference");?>" 
+            data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>"
+          >
+          <a href="<?php the_permalink() ?>"><img class="oeil" src="<?php echo get_stylesheet_directory_uri(); ?>/images/oeil.png"></a>  
+          <div class="ref"><p><?php echo get_field("reference");?></p></div>
+          <div class="cat"><p><?php echo get_the_terms($post,"photo-categorie")[0]->name;?></p></div> 
+      </div>
+      <div class="galerie_photos"> 
+        <a href="#" data-ref="<?php echo get_field("reference");?>" data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>" ><?php the_post_thumbnail(); ?></a>
+      </div>
+  </div>
+  <?php the_terms( $post->ID, 'photos','Photo'); ?>
+  <?php endwhile;
   }else{
     echo "<p>Aucune photo trouvé</p>";
   }
   
    wp_reset_postdata(); ?>
-  <div class="galeriebox">
-  <div class="galerie">
-  <?php the_terms( $post->ID, 'photos','Photo'); ?>
-  <?php the_content(); ?>
-  </div>
-  </div>
   <?php
   //wp_send_json()
   die();
