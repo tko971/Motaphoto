@@ -1,5 +1,5 @@
 
-let liencontact = document.querySelectorAll(".menu-item-75");
+let liencontact = document.querySelectorAll(".btn-contact");
 let modale = document.querySelector(".modale");
 
 
@@ -24,7 +24,7 @@ function togglemenu(e){
     menuburger.classList.toggle("active"); 
 }
 
-//charger plus
+//CHARGER PLUS
 
 var page = 4;
 
@@ -70,6 +70,7 @@ jQuery(function($) {
     })
     
 
+    //FILTRES PHOTO
 
     $('#listecategories').on('change',function(event){
             $.ajax({
@@ -141,21 +142,6 @@ $('#ordre').on('change',function(event){
 })
 
 });
-
-//NAVIGATION SINGLE POST
-
-let flecheGauche = document.querySelector(".sliderprev");
-let flecheDroite = document.querySelector(".slidernext");
-let imagenext = document.querySelector(".page a")
-
-imagenext.addEventListener("click", () => {
-    
-    
-    if(imagenext.dataset = "bf2399") {
-        flecheDroite.style.display = "none";
-      }
-    
-  });
 
 
 

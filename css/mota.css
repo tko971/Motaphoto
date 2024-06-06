@@ -325,7 +325,7 @@ input[type="submit" i]{
 
 .singleimg{
 
-width: 40%;
+width: 50%;
 position: relative;
 left: 162px;
 }
@@ -333,7 +333,7 @@ left: 162px;
 .singleimg img{
 
     object-fit: cover;
-    width: 100%;
+    width: 80%;
     
 }
 
@@ -749,6 +749,35 @@ left: 162px;
     object-fit: cover;
 }
 
+
+
+@media screen and (max-width: 1300px){
+
+    .taxonomy{
+
+        align-items: center;
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    .categorie {
+
+        position: initial;
+    }
+
+    .format {
+
+        position: initial;
+    }
+
+    .trier {
+
+        position: initial;
+    }
+
+
+}
+
 @media screen and (max-width: 850px){
 
     .menu-toggle{
@@ -783,6 +812,7 @@ left: 162px;
     }
 
     
+    
     .post {
         display: flex;
         flex-direction: column-reverse;
@@ -810,6 +840,8 @@ left: 162px;
     }
 
     .contactsingle {
+
+        margin-top: 80px;
         display: flex;
         width: 100%;
         gap: initial;
@@ -824,12 +856,20 @@ left: 162px;
     
     }
 
-    .vousaimerez{
+    .vousaimerezimg{
 
-        display: flex;
+        
         flex-direction: column;
+        
+
+    }
+
+    .vousaimerez h3{
+
+        
+        display: flex;
         justify-content: center;
-        align-items: center;
+        
 
     }
 
