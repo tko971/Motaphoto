@@ -8,7 +8,8 @@ liencontact.forEach(function(e){
 
 function toggleNav(e){
     e.preventDefault()
-	modale.classList.toggle("active") 
+	modale.classList.toggle("active")
+    modale.addEventListener("click" , toggleNav) 
 }})
 
 //MENU TOGGLE
@@ -21,7 +22,8 @@ menuburger.addEventListener("click", togglemenu)
 function togglemenu(e){
     e.preventDefault()
 	navhover.classList.toggle("active");
-    menuburger.classList.toggle("active"); 
+    menuburger.classList.toggle("active");
+    navhover.addEventListener("click" , togglemenu) 
 }
 
 //CHARGER PLUS

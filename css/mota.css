@@ -17,8 +17,10 @@
 }
 
 body{
-margin:0;
-padding: 0;
+margin:auto;
+max-width: 1440px;
+width: 100%;
+
     
 }
 
@@ -51,7 +53,7 @@ a{
 
       display: flex;
       gap: 50px;
-      margin-right: 100px;
+      margin-right: 142px;
       float: right;
       
 
@@ -271,13 +273,26 @@ input[type="submit" i]{
 .contactsingle{
 
     display: flex;
-    width: 80%;
-    gap: 300px;
+    width: 100%;
     align-items: center;
+}
+
+.contactsingle p{
+
+    width: 197px;
+    margin-right: 103px;
 }
 
 
 /* POST Single */
+
+.hrUn{
+
+    width: 30%;
+    position: absolute;
+    top: 955px;
+    color: black;
+}
 
 .photosingle{
 
@@ -296,6 +311,8 @@ input[type="submit" i]{
 .post{
 
     display: flex;
+    max-height: 844px;
+    height: 100%;
     width: 100%;
     align-items: center;
     box-shadow: 0 -30px 35px -48px #D8D8D8;
@@ -319,7 +336,7 @@ input[type="submit" i]{
 
     width: 50%;
     position: relative;
-    top: 396px;
+    top: 279px;
 }
 
 
@@ -327,13 +344,14 @@ input[type="submit" i]{
 
 width: 50%;
 position: relative;
-left: 162px;
+
 }
 
 .singleimg img{
 
     object-fit: cover;
-    width: 80%;
+    width: 100%;
+    max-height: 844px;
     
 }
 
@@ -362,9 +380,32 @@ left: 162px;
 
     margin-left: 144px;
     margin-right: 144px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
 
+}
+
+.vousaimerez hr{
+
+    width: 100%;
+
+}
+
+.galerie-single{
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 90%;
+}
+
+
+.galerie-single a img{
+
+    object-fit: cover;
+    height: 495px;
+    width: 564px;
 }
 
 
@@ -775,6 +816,28 @@ left: 162px;
         position: initial;
     }
 
+    .galerie-single{
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vousaimerez h3{
+
+        
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    
+    .pagination{
+
+        display: none;
+    }
+    
+
+
 
 }
 
@@ -811,6 +874,11 @@ left: 162px;
         
     }
 
+    .contactsingle p {
+    
+        margin-right: 75px;
+    }
+
     
     
     .post {
@@ -818,12 +886,14 @@ left: 162px;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        margin-top: 300px;
+        box-shadow: 0 -30px 35px -48px #D8D8D8;
         
     }
 
     .postinfo {
-        width: auto;
-        top: initial;
+        width: 100%;
+        top: inherit;
     
 
     } 
@@ -841,7 +911,6 @@ left: 162px;
 
     .contactsingle {
 
-        margin-top: 80px;
         display: flex;
         width: 100%;
         gap: initial;
@@ -856,6 +925,12 @@ left: 162px;
     
     }
 
+    .photosingle {
+
+        margin-top: 155px;
+    
+    }
+
     .vousaimerezimg{
 
         
@@ -864,22 +939,47 @@ left: 162px;
 
     }
 
-    .vousaimerez h3{
+    .vousaimerez{
 
         
-        display: flex;
-        justify-content: center;
+        margin-left: initial;
+        margin-right: initial;
         
 
     }
+
 
     .my-footer-menu {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0;
     }
 
-}
+    #site-title{
+
+        position: relative;
+        left: 80px;
+    }
+
+    .galeriebox{
+
+        display: initial;
+    }
+
+    .hrUn{
+
+        width: 100%;
+        left: 0;
+        top: 1079px;
+    }
+};
+        
+    
+
+
+    
+
 
 
 

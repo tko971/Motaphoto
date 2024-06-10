@@ -69,16 +69,10 @@ function register_my_menu() {
     <?php the_terms( $post->ID, 'photos','Photo'); ?>
     <?php endwhile;
     wp_reset_postdata(); ?>
-
-
-   <?php
+    <?php
    //wp_send_json()
    die();
- 
-
-  }
-  
-   
+   }
   
 //FILTER
 
@@ -104,9 +98,7 @@ function register_my_menu() {
     );
  }
 
-
-
-      $args=array(
+    $args=array(
      'post_type' => 'photo',
      "orderby"=>"date",
      "order" =>$_POST['ordre'],
@@ -147,9 +139,7 @@ function register_my_menu() {
   //wp_send_json()
   die();
 
-  
-  
- }
+  }
 
  
 

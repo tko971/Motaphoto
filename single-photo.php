@@ -12,12 +12,13 @@
         <p>TYPE : <?php echo get_field("type");?></p>
         <p>ANNÉE : <?php the_date("Y"); ?></p>
         </div>
-        <hr>  
+          
       </div>
       <div class="singleimg">
       <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) ); } ?>
       </div>
     </div>
+    <hr class="hrUn">
     <div class="photosingle">
       <div class="contactsingle">
       <p>Cette photo vous interesse?</p>
@@ -63,12 +64,11 @@
       </div>
     </div>
     </div>
-      <hr>
     <div class="vousaimerez">
+    <hr>
       <h3>  VOUS AIMEREZ AUSSI </h3>
-    <div class="vousaimerezimg">
+     <div class="vousaimerezimg">
       <?php $categories = get_the_terms(get_the_ID(),'photo-categorie'); ?>
-      <?php die(); ?>
       <?php //var_dump($categories); ?>
       <?php if ($categories): ?>
 
@@ -87,37 +87,41 @@
           )
         );
         //var_dump($categories[0]->slug); ?>
-        <?php $loop = new WP_Query($args);?>
-        <?php //var_dump($loop); ?>
-        <?php while ( $loop->have_posts()) : $loop->the_post(); ?>
-          <?php
-            $thumbnail_id= get_post_thumbnail_id();
-            $image = wp_get_attachment_image_src($thumbnail_id, 'full');
-          ?>
-          <ul>
-            <li class="">
-              <div class="hover_lightbox">
-                  <img class="fullscreen" src="<?php echo get_stylesheet_directory_uri(); ?>/images/fullscreen.png"
-                  data-src="<?php echo esc_url($image[0]); ?>"
-                  data-ref="<?php echo get_field("reference");?>" 
-                  data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>"
-                  >
-                  <a href="<?php the_permalink() ?>"><img class="oeil" src="<?php echo get_stylesheet_directory_uri(); ?>/images/oeil.png"></a>  
-                  
-              </div>
-              <div class=""> 
-                <a href="#" data-ref="<?php echo get_field("reference");?>" data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>" ><?php the_post_thumbnail('large'); ?></a>
-              </div>
-            </li>
-          </ul>
-          <?php //the_terms( $post->ID, 'photos','Photo'); ?>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-      <?php endif; ?>
+
+<div class="galeriebox">
+  <div class="galerie-single">
+    <?php $loop = new WP_Query($args);?>
+    <?php while ( $loop->have_posts()) : $loop->the_post(); ?>
+    <?php
+      $thumbnail_id= get_post_thumbnail_id();
+      $image = wp_get_attachment_image_src($thumbnail_id, 'full');
+    ?>
+    <div class="galerie_photo">
+        <div class="hover_lightbox">
+            <img 
+              class="fullscreen" src="<?php echo get_stylesheet_directory_uri(); ?>/images/fullscreen.png" 
+              data-src="<?php echo esc_url($image[0]); ?>"
+              data-ref="<?php echo get_field("reference");?>" 
+              data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>"
+            >
+            <a href="<?php the_permalink() ?>"><img class="oeil" src="<?php echo get_stylesheet_directory_uri(); ?>/images/oeil.png"></a>  
+            <div class="ref"><p><?php echo get_field("reference");?></p></div>
+            <div class="cat"><p><?php echo get_the_terms($post,"photo-categorie")[0]->name;?></p></div> 
+        </div>
+        <div class="galerie_photos"> 
+          <a href="#" data-ref="<?php echo get_field("reference");?>" data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>" ><?php the_post_thumbnail(); ?></a>
+        </div>
     </div>
+    <?php the_terms( $post->ID, 'photos','Photo'); ?>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
   </div>
+</div>
+    </div>
   <?php endwhile; ?>
 <?php endif; ?>
 </div>
 
 <?php get_footer(); ?>
+

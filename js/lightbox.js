@@ -7,34 +7,7 @@ const lightbox = document.querySelector(".lightbox");
 const lightboxnext = document.querySelector(".lightbox__next");
 const lightboxprev = document.querySelector(".lightbox__prev");
 
-
-
-
-// links.forEach(function (i) {
-
-//   i.addEventListener('click', function(event) {
-//   for (let i = 0; i < links.length; i++)
-//   imageUrl = event.target.src
-//   images.src = imageUrl  
-//   //console.log(event.target);
-  
-  
-  
-// lightbox.classList.toggle("show");
-// lightboxnext.addEventListener("click" , () => {
-//   for (let i = 0; i < links.length; i++)
-//   imageurl = links[i].src;
-//   images.src = imageurl;  
-// 	//console.log(links[i]);
-  
-	
-// }
-// );
-//   });
-// });
-
-
-
+//Fermeture Lightbox
 
 closelightbox.addEventListener("click", lightboxclose);
 
@@ -42,13 +15,11 @@ function lightboxclose() {
   
   lightbox.classList.remove("show");
 
-
 }  
 
 // 30/05/2024
 
 const ouvertureLightbox = document.querySelectorAll('.fullscreen');
-// const lightbox=document.querySelector('.lightbox');
 const lb_img = document.querySelector('#lightbox-img');
 const lb_cat = document.querySelector('#lightbox-cat');
 const lb_ref = document.querySelector('#lightbox-ref');
