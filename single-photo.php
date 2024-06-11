@@ -12,7 +12,6 @@
         <p>TYPE : <?php echo get_field("type");?></p>
         <p>ANNÉE : <?php the_date("Y"); ?></p>
         </div>
-          
       </div>
       <div class="singleimg">
       <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) ); } ?>
@@ -25,12 +24,6 @@
       <button class="btn-contact">Contact</button>
       <ul class="pagination">
         <li class="page">
-          <?php /*
-        <div class="imgnext" data-ref="<?php echo get_field("reference");?>">
-        <?php $nextPost = get_next_post(); $nextThumbnail = get_the_post_thumbnail( $nextPost->ID ); next_post_link($nextThumbnail);?> 
-        </div>  
-        <?php next_post_link('%link'); ?><img class="slidernext" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lined.png">
-        */ ?>
         <?php $nextPost = get_next_post();?>
           <?php if($nextPost) { ?>
             <div class="imgnext">
@@ -39,7 +32,6 @@
                 next_post_link($nextThumbnail);
               ?> 
             </div>   
-            <?php //previous_post_link('%link'); ?>
             <a href="<?php echo get_the_permalink($nextPost->ID); ?>">
               <img class="slidernext" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lined.png"> 
             </a>
@@ -54,7 +46,6 @@
                 previous_post_link($prevThumbnail);
               ?> 
             </div>   
-            <?php //previous_post_link('%link'); ?>
             <a href="<?php echo get_the_permalink($prevPost->ID); ?>">
               <img class="sliderprev" src="<?php echo get_stylesheet_directory_uri(); ?>/images/Lineg.png"> 
             </a>

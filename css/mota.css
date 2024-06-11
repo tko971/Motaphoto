@@ -24,6 +24,11 @@ width: 100%;
     
 }
 
+#wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .content{
 
     margin-left: 146px;
@@ -67,6 +72,19 @@ a{
 }
 
 /*MODALE*/
+
+.overlay {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 
 label{
 
@@ -121,6 +139,7 @@ input[type="submit" i]{
 .modale{
 
     display: none ;
+    display: flex ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -128,8 +147,8 @@ input[type="submit" i]{
     background-color: white;
     width: 597px;
     height: 759px;
-    bottom: 0;
-    position: fixed;
+    /* bottom: 0;
+    position: fixed; */
     
 }
 
@@ -142,7 +161,7 @@ input[type="submit" i]{
     margin-top: 20px;
 }
 
-
+.overlay.active,
 .modale.active{
 
     
@@ -254,7 +273,7 @@ input[type="submit" i]{
 
 .menu-toggle.active .l1 {
 
-    transform: translateY(0px) rotate(135deg);
+    transform: translateY(3px) rotate(140deg);
 
 }
   
@@ -266,7 +285,7 @@ input[type="submit" i]{
   
 .menu-toggle.active .l3 {
 
-    transform: translateY(0px) rotate(-135deg);
+    transform: translateY(0px) rotate(-144deg);
 
 }
 
@@ -274,13 +293,22 @@ input[type="submit" i]{
 
     display: flex;
     width: 100%;
+    justify-content: space-between;
+    /* gap: 300px; */
     align-items: center;
+}
+
+.contactsingle > div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 25px;
 }
 
 .contactsingle p{
 
     width: 197px;
-    margin-right: 103px;
+    
 }
 
 
@@ -288,9 +316,9 @@ input[type="submit" i]{
 
 .hrUn{
 
-    width: 30%;
+    width: 29%;
     position: absolute;
-    top: 955px;
+    top: 990px;
     color: black;
 }
 
@@ -323,6 +351,9 @@ input[type="submit" i]{
     
     font-family: "Space Mono";   
     font-style: italic;
+    font-size: 66px;
+    width: 70%;
+    margin-top: -265px;
 }
 
 .post-info{
@@ -474,6 +505,7 @@ position: relative;
     font-family: 'Space Mono';
     border: none;
     border-radius: 2px;
+    margin-right: 315px;
 }
 
 .taxonomy select{
@@ -588,10 +620,10 @@ position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    position: relative;
-    left: 322px;
+    /* position: relative;
+    left: 322px; */
     padding: 0px;
-    width: 300px;
+    /* width: 300px; */
 
 }
 
@@ -599,8 +631,8 @@ position: relative;
 
 .lightbox__container {
 
-    
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -631,22 +663,22 @@ position: relative;
 .lightbox__next{
   
     position: relative;
-    left: 1600px;
-    top: 500px;
+    left: 395px;
+    top: 280px;
 }
 
 .lightbox__prev{
    
     position: relative;
-    left: 42px;
-    top: 500px;
+    left: -407px;
+    top:280px;
+    
 }
 
 .lightbox__close{
     
     position: relative;
-    top: 54px;
-    left: 1700px;
+    left: 395px;
 }
 
 /* HOVER LIGHTBOX */
@@ -836,9 +868,6 @@ position: relative;
         display: none;
     }
     
-
-
-
 }
 
 @media screen and (max-width: 850px){
@@ -867,7 +896,7 @@ position: relative;
         flex-direction: column;
         gap: 60px;
         left: 0px;
-        top: 56px;
+        top: 88px;
         background-color: #E00000;
         z-index: 2;
         
@@ -879,6 +908,11 @@ position: relative;
         margin-right: 75px;
     }
 
+    .contactsingle button{
+
+        margin-right: initial;
+    }
+
     
     
     .post {
@@ -887,16 +921,25 @@ position: relative;
         justify-content: center;
         align-items: center;
         margin-top: 300px;
-        box-shadow: 0 -30px 35px -48px #D8D8D8;
+        
         
     }
 
     .postinfo {
         width: 100%;
         top: inherit;
+        margin-bottom: 70px;
     
 
-    } 
+    }
+    
+    .post-title {
+        font-family: "Space Mono";
+        font-style: italic;
+        font-size: xx-large;
+        width: 70%;
+        margin-top: initial;
+    }
 
     .singleimg {
         width: 100%;
@@ -927,7 +970,7 @@ position: relative;
 
     .photosingle {
 
-        margin-top: 155px;
+        margin-top: 115px;
     
     }
 
@@ -962,16 +1005,30 @@ position: relative;
         left: 80px;
     }
 
-    .galeriebox{
-
-        display: initial;
-    }
-
     .hrUn{
 
         width: 100%;
         left: 0;
-        top: 1079px;
+        top: 1379px;
+    }
+
+    .lightbox__close{
+
+        left: 268px;
+    }
+
+    .lightbox__prev{
+
+        left: -107px;
+        top: 525px;
+
+    }
+
+    .lightbox__next{
+
+        left: 88px;
+        top: 544px;
+
     }
 };
         

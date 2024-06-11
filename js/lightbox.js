@@ -17,7 +17,7 @@ function lightboxclose() {
 
 }  
 
-// 30/05/2024
+// OUVERTURE LIGHTBOX 
 
 const ouvertureLightbox = document.querySelectorAll('.fullscreen');
 const lb_img = document.querySelector('#lightbox-img');
@@ -34,7 +34,7 @@ ouvertureLightbox.forEach(function(carre) {
 })
 
   
-/* Lightbox */
+/* Lightbox Informations */
 function chargeListe() {
   let currentImage = 0
   const lightboxlist = []
@@ -70,7 +70,7 @@ function chargeListe() {
     lb_ref.innerHTML =  lightboxlist[currentImage].ref;
   })
 
-  console.log(lightboxlist);
+  //console.log(lightboxlist);
 }
 
 chargeListe();

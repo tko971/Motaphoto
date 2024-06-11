@@ -1,16 +1,24 @@
-
 let liencontact = document.querySelectorAll(".btn-contact");
-let modale = document.querySelector(".modale");
+// let modale = document.querySelector(".modale");
+let modale = document.querySelector(".overlay");
 
 
 liencontact.forEach(function(e){
     e.addEventListener("click", toggleNav)
 
-function toggleNav(e){
-    e.preventDefault()
-	modale.classList.toggle("active")
-    modale.addEventListener("click" , toggleNav) 
-}})
+    function toggleNav(e){
+        e.preventDefault()
+    	modale.classList.toggle("active") 
+    }
+})
+
+window.addEventListener("click", function(e){
+    console.log(e.target)
+    if(e.target.classList.contains("overlay")) {
+        console.log("clic en dehors de la modale")
+        modale.classList.remove("active")
+    }
+})
 
 //MENU TOGGLE
 let menuburger = document.querySelector(".menu-toggle");
@@ -20,7 +28,7 @@ let navhover = document.querySelector("#menu-main-menu");
 menuburger.addEventListener("click", togglemenu)
 
 function togglemenu(e){
-    e.preventDefault()
+    
 	navhover.classList.toggle("active");
     menuburger.classList.toggle("active");
     navhover.addEventListener("click" , togglemenu) 
