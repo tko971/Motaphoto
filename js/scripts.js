@@ -95,6 +95,7 @@ jQuery(function($) {
             success:function(response){
                 console.log(response)
                 $('.galerie') .html (response);
+                $('.loadmore').hide()
 
             },
             error:function(response){
@@ -118,6 +119,7 @@ jQuery(function($) {
         success:function(response){
             console.log(response)
             $('.galerie') .html (response);
+            $('.loadmore').hide()
 
         },
         error:function(response){
