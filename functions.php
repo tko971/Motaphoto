@@ -25,7 +25,7 @@ function register_my_menu() {
 //LOGO
   add_theme_support('custom-logo');  
 
-//CHARGER PLUS
+//CHARGER PLUS AVEC AJAX
 
   add_action("wp_ajax_load_posts","load_posts");
   add_action("wp_ajax_nopriv_load_posts","load_posts");

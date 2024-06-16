@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 
 <div class="bannerimg">
+  <div class="bannerimage">
   <?php $loop = new WP_Query( array('post_type' => 'photo', 'posts_per_page' => 1,"orderby"=>"rand"));?>
   <?php while ( $loop->have_posts()) : $loop->the_post(); ?>
   <?php the_post_thumbnail(); ?>
   <?php endwhile; ?>
   <?php wp_reset_postdata(); ?>
+  </div>
   <div class="titrebanniere">
     <?php echo wp_get_attachment_image( 135, "", array( "class" => "img-responsive" ) );  ?>
   </div>
 </div>
-
 
 <div class="taxonomy">
   <div class="categorie">
@@ -61,7 +62,7 @@
             <div class="cat"><p><?php echo get_the_terms($post,"photo-categorie")[0]->name;?></p></div> 
         </div>
         <div class="galerie_photos"> 
-          <a href="#" data-ref="<?php echo get_field("reference");?>" data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>" ><?php the_post_thumbnail(); ?></a>
+          <a href="<?php the_permalink() ?>" data-ref="<?php echo get_field("reference");?>" data-cat="<?php echo get_the_terms($post,"photo-categorie")[0]->name;?>" ><?php the_post_thumbnail(); ?></a>
         </div>
     </div>
     <?php the_terms( $post->ID, 'photos','Photo'); ?>

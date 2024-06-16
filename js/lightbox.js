@@ -1,7 +1,6 @@
 // const images = document.querySelector(".lightbox__container__photo img");
 const links = document.querySelectorAll('.galerie_photos img');
 const galleryimg = document.querySelector("galerie img");
-let fullscreen = document.querySelectorAll('.fullscreen');
 const closelightbox = document.querySelector(".lightbox__close");
 const lightbox = document.querySelector(".lightbox");
 const lightboxnext = document.querySelector(".lightbox__next");
@@ -34,7 +33,7 @@ ouvertureLightbox.forEach(function(carre) {
 })
 
   
-/* Lightbox Informations */
+/* Lightbox Informations Slider*/
 function chargeListe() {
   let currentImage = 0
   const lightboxlist = []

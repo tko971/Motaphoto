@@ -219,17 +219,26 @@ input[type="submit" i]{
     width: 100%;
 }
 
-.bannerimg img{
+.bannerimage img{
 
     width: 100%;
+    object-fit: cover;
     
-    
+}
+
+.bannerimage{
+
+    width: 100%;
+    height: 100%;
+    max-height: 962px;
+    height: 100%;
 }
 
 .bannerimg{
 
     width: 100%;
-    height: 962px;
+    max-height: 962px;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
@@ -238,6 +247,13 @@ input[type="submit" i]{
 
     position: absolute;
     top: 500px;
+    width: 70%;
+}
+
+.titrebanniere img{
+
+    width: 100%;
+    object-fit: contain;
 }
 
 
@@ -314,11 +330,18 @@ input[type="submit" i]{
 
 /* POST Single */
 
+.hr2{
+
+    display: none;
+    width: 100%;
+    filter: blur(3px);
+}
+
 .hrUn{
 
-    width: 29%;
+    width: 38%;
     position: absolute;
-    top: 990px;
+    top: 956px;
     color: black;
 }
 
@@ -326,6 +349,8 @@ input[type="submit" i]{
 
     display: flex;
     height: 150px;
+    align-items: center;
+
 }
 
 .main-single{
@@ -347,6 +372,7 @@ input[type="submit" i]{
     
 }
 
+
 .post-title{
     
     font-family: "Space Mono";   
@@ -356,18 +382,16 @@ input[type="submit" i]{
     margin-top: -265px;
 }
 
-.post-info{
-    
-    font-family: "Space Mono";
-    position: relative;
-    
-}
-
 .postinfo{
 
     width: 50%;
     position: relative;
-    top: 279px;
+    top: 306px;
+}
+
+.postinfo p{
+
+    font-family: 'Space Mono';
 }
 
 
@@ -382,7 +406,8 @@ position: relative;
 
     object-fit: cover;
     width: 100%;
-    max-height: 844px;
+    height: 844px;
+    
     
 }
 
@@ -452,8 +477,14 @@ position: relative;
     margin-top: 200px;
     width: 90%;
     
-    
+}
 
+.galerie_photo{
+
+    max-width: 564px;
+    width: 100%;
+    max-height: 495px;
+    height: 100%;
 }
 
 .galerie a img{
@@ -620,10 +651,9 @@ position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    /* position: relative;
-    left: 322px; */
     padding: 0px;
-    /* width: 300px; */
+    margin-top: 30px;
+    
 
 }
 
@@ -804,7 +834,8 @@ position: relative;
 .lightbox__container_photo_meta {
     position: absolute;
     display: flex;
-    top: 742px;
+    justify-content: center;
+    top: 850px;
     color: white;
     width: 50%;
     gap: 435px;
@@ -820,6 +851,15 @@ position: relative;
     width: 564px;
     height: 495px;
     object-fit: cover;
+}
+
+.lightbox__container__photo{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
@@ -888,24 +928,76 @@ position: relative;
 
         display: flex;
         visibility: hidden;
-        position: fixed;
+        position: absolute;
         width: 100%;
         justify-content: center;
         align-items: center;
-        height: 800px;
+        height: 812px;
         flex-direction: column;
         gap: 60px;
         left: 0px;
-        top: 88px;
+        top: 55px;
+        padding: 0;
         background-color: #E00000;
         z-index: 2;
         
         
     }
 
+    .lightbox__container__photo img {
+        
+        height: 279px;
+        width: 318px;
+        object-fit: cover;
+    }
+
+    .lightbox__close{
+
+        left:252px;
+    }
+
+    .lightbox__prev{
+
+        top: 152px;
+        left: -231px;
+        
+    }
+
+    .lightbox__next{
+
+        left: 224px;
+        top: 173px;
+
+    }
+
+    .lightbox__container_photo_meta {
+
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 630px;
+        color: white;
+        width: 50%;
+        gap: 177px;
+
+    }
+
     .contactsingle p {
     
         margin-right: 75px;
+    }
+
+    .hrUn{
+
+        width: 100%;
+        left: 0;
+        top: 1237px;
+    }
+
+    .hr2{
+
+        display: inherit;
+        
     }
 
     .contactsingle button{
@@ -920,7 +1012,7 @@ position: relative;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        margin-top: 300px;
+        margin-top: 200px;
         
         
     }
@@ -943,13 +1035,15 @@ position: relative;
 
     .singleimg {
         width: 100%;
+        height: 900px;
         position: relative;
         left: initial;
     }
 
     .singleimg img {
         
-        object-fit: none;
+        object-fit: cover;
+        height: 100%;
     }
 
     .contactsingle {
@@ -1002,35 +1096,157 @@ position: relative;
     #site-title{
 
         position: relative;
-        left: 80px;
+        left: 60px;
     }
 
-    .hrUn{
+
+    .bannerimage img {
+        width: 100%;
+        object-fit: cover;
+        height: 600px;
+    }
+
+    .titrebanniere {
+        position: absolute;
+        top: 339px;
+        width: 70%;
+    }
+
+    .taxonomy {
+        
+        position: relative;
+        top: 90px;
+    }
+
+    .main-single {
+        margin-left: 100px;
+        margin-right: 100px;
+        
+    }
+}
+
+@media screen and (max-width: 600px){
+
+
+    .galerie a img {
+        object-fit: cover;
+        height: 279px;
+        width: 318px;
+    }
+
+    
+    .galerie {
+        display: flex;
+        flex-wrap: initial;
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 200px;
+        width: 90%;
+    }
+
+    .galerie_photo {
+        max-width: 564px;
+        width: 100%;
+        max-height: 495px;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    
+    .hover_lightbox {
+        
+        display: none;
+        
+    }
+
+     .bannerimage img {
+
+        height: 400px;
+    }
+
+    .titrebanniere {
+        position: absolute;
+        top: 234px;
+        width: 78%;
+    }
+
+    .main-single {
+        margin-left: 56px;
+        margin-right: 56px;
+        
+    }
+
+    .vousaimerez- .galeriebox{
+
+        display: flex;
+    }
+
+    .vousaimerezimg a img{
+
+        object-fit: cover;
+        height: 279px;
+        width: 318px;
+    }
+
+    .post {
+        
+        margin-top: 130px;
+        
+        
+    }
+
+    .postinfo{
+        
+        top: 50px;
+        
+        
+    }
+
+    .hrUn {
+        
+        top: 1167px;
+    }
+
+    .modale {
+        
+        max-width: 286px;
+        width: 100%;
+        height: 690px;
+    }
+
+    .modale form {
+        
+        margin-top: 0px;
+    }
+
+    .modale ul input {
+
+        height: 40px;
+        max-width: 190px;
+               
+    }
+
+    .modale textarea {
+
+        height: 149px;
+        width: 190px;
+        
+    }
+
+    .modale img{
 
         width: 100%;
-        left: 0;
-        top: 1379px;
+        object-fit: contain;
     }
 
-    .lightbox__close{
-
-        left: 268px;
+    input[type="submit" i] {
+        width: 190px;
+        
     }
 
-    .lightbox__prev{
-
-        left: -107px;
-        top: 525px;
-
-    }
-
-    .lightbox__next{
-
-        left: 88px;
-        top: 544px;
-
-    }
-};
+}
         
     
 
